@@ -56,9 +56,11 @@ const submitHandler = (event) => {
         amount:enteredAmount,
         date:new Date(enteredDate)
     }
-
-    alert(1);
     console.log(expenseData);
+
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
 }
 
     return (
@@ -67,17 +69,17 @@ const submitHandler = (event) => {
                 <div className="new-expense__control">
                     <label>Title</label>
                    {/* <input type="text"onChange={(even)=>{console.log(even.target.value)}} /> */}
-                   <input type="text"onChange={titleChangeHandler} />
+                   <input type="text" value={enteredTitle} onChange={titleChangeHandler} />
                    {/* <input type="text" onChange={(event)=>{inputChangeHandler('title', event.target.value)}} /> */}
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                   <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler}/>
+                   <input type="number" value = {enteredAmount} min="0.01" step="0.01" onChange={amountChangeHandler}/>
                    {/* <input type="number" min="0.01" step="0.01" onChange={(event)=>{inputChangeHandler('amont', event.target.value)}}/> */}
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2024-01-01" max="2024-12-31" onChange={dateChangeHandler}/>
+                    <input type="date" value = {enteredDate} min="2024-01-01" max="2024-12-31" onChange={dateChangeHandler}/>
                     {/* <input type="date" min="2024-01-01" max="2024-12-31" onChange={(event)=>{inputChangeHandler('date', event.target.value)}}/> */}
                 </div>
                 </div>
