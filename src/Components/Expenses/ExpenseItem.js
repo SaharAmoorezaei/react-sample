@@ -13,12 +13,12 @@ import React,{useState} from "react"
 function ExpenseItem(props) {
   // let title = props.title;
   const[title, setTitle] = useState(props.title)
-  console.log(title);
+  // console.log(title);
   const clickHandler = () => {
     // console.log('Clicked!');
     // title = 'updated!!!';
     setTitle('updated!!!');
-    console.log(title);
+    // console.log(title);
   };
   return (
     <Card className="expense-item">
