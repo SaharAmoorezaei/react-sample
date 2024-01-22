@@ -6,10 +6,14 @@ function App() {
     { title: "Travel Expense", amount: 1300, date: new Date(2023, 5, 28) },
     { title: "Education fees", amount: 5000, date: new Date(2023, 6, 29) },
   ];
+  const addExpenseHandler = (expense)=> {
+    console.log('In APP.js')
+    console.log(expense);
+  }
   return (
     <div>
       {/* <h2>Hello Coders!</h2> */}
-      <NewExpense />
+      <NewExpense  onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}/>
     </div>
   )
